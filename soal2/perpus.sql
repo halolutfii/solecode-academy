@@ -41,7 +41,7 @@ CREATE TABLE Peminjaman (
 
 -- Initial Data
 -- Masukkan data 5 Kategori ke dalam sistem
-INSERT INTO kategori ('id', 'nama') VALUES 
+INSERT INTO kategori (id, nama) VALUES 
 ('1', 'ACTION'),
 ('2', 'SCI-FI'),
 ('3', 'ROMANCE'),

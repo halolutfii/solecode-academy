@@ -50,11 +50,11 @@ INSERT INTO kategori (id, nama) VALUES
 
 -- Masukkan data 5 User ke dalam sistem
 INSERT INTO user (id, nama, alamat, no_ktp, no_hp, email, tanggal_terdaftar) VALUES
-('6', 'Lutfi', 'Alamat 1', '3674011245822231', '082110833753', 'lutfii@gmail.com', '2025-07-12'),
-('7', 'Cahya', 'Alamat 2', '3674011245822231', '082110833753', 'cahya@gmail.com', '2025-07-12'),
-('8', 'Nugraha', 'Alamat 3', '3674011245822231', '082110833753', 'nugraha@gmail.com', '2025-07-12'),
-('9', 'Lutfi Cahya', 'Alamat 4', '3674011245822231', '082110833753', 'lutfiicahya@gmail.com', '2025-07-12'),
-('10', 'Lutfi cahya Nugraha', 'Alamat 5', '3674011245822231', '082110833753', 'lutfiicahyan@gmail.com', '2025-07-12');
+('1', 'Lutfi', 'Alamat 1', '3674011245822231', '082110833753', 'lutfii@gmail.com', '2025-07-12'),
+('2', 'Cahya', 'Alamat 2', '3674011245822231', '082110833753', 'cahya@gmail.com', '2025-07-12'),
+('3', 'Nugraha', 'Alamat 3', '3674011245822231', '082110833753', 'nugraha@gmail.com', '2025-07-12'),
+('4', 'Lutfi Cahya', 'Alamat 4', '3674011245822231', '082110833753', 'lutfiicahya@gmail.com', '2025-07-12'),
+('5', 'Lutfi cahya Nugraha', 'Alamat 5', '3674011245822231', '082110833753', 'lutfiicahyan@gmail.com', '2025-07-12');
 
 -- Masukkan data 10 Buku ke dalam sistem
 INSERT INTO buku (judul, pengarang, penerbit, isbn, tahun_terbit, jumlah_tersedia, kategori_id) VALUES
@@ -87,7 +87,7 @@ UPDATE peminjaman SET tanggal_kembali = '2025-07-19', denda = 5000 WHERE id = 9;
 
 -- Manipulasi Data
 -- Tampilkan daftar buku yang tidak pernah dipinjam di oleh siapapun. (Expected output buku ke-10)
-SELECT * FROM buku LEFT JOIN peminjaman ON buku.id = peminjaman.buku_id WHERE peminjaman.buku_id IS NULL;
+SELECT buku.id, buku.judul FROM buku LEFT JOIN peminjaman ON buku.id = peminjaman.buku_id WHERE peminjaman.buku_id IS NULL;
 
 -- Tampilkan user yang pernah mengembalikan buku terlambat beserta dendanya. (Expected output user 3 dan denda Rp5.000)
 SELECT user.id, user.nama, peminjaman.denda FROM peminjaman JOIN user ON peminjaman.anggota_id  = user.id 
